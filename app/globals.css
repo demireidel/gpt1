@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Space Grotesk Variable", system-ui, sans-serif;
+  --color-bg: oklch(11% 0.02 240);
+  --color-ink: oklch(95% 0.01 240);
+  --color-accent: oklch(72% 0.18 230);
+}
+:root { color-scheme: dark; }
+html, body { height: 100%; background: var(--color-bg); }
+body { font-family: var(--font-sans); }
+.hero-fallback { position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: radial-gradient(120% 120% at 50% 120%, color-mix(in oklab, var(--color-accent) 12%, transparent) 0%, transparent 60%),
+              conic-gradient(from 0deg, color-mix(in oklab, var(--color-accent) 14%, transparent) 0 100deg,
+              transparent 100deg 260deg,
+              color-mix(in oklab, var(--color-accent) 12%, transparent) 260deg 360deg);
+  filter: saturate(1.2);
+}
+.hero-noise { position: absolute; inset: -20% -10% 0 -10%; opacity: .06; mix-blend-mode: screen; }
+.display { letter-spacing: -0.02em; }
+.btn { @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-medium transition-transform;
+  background: color-mix(in oklab, var(--color-accent) 24%, black);
+  color: var(--color-ink);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-secondary { background: color-mix(in oklab, var(--color-ink) 6%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+}
+@media (prefers-reduced-motion: reduce) { .hero-noise { display: none; } }
