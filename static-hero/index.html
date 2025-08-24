@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plan Nuclear Argentino — Hero estático</title>
+<style>
+  :root { color-scheme: dark; --bg: #02040a; --ink: #eef2ff; --blue: #3ea0ff; }
+  html,body {height:100%; background: var(--bg); margin:0; font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink);}
+  .wrap{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+  .fallback{position:absolute;inset:0;z-index:-1;background:
+    radial-gradient(120% 120% at 50% 120%, rgba(62,160,255,.2) 0%, transparent 60%),
+    conic-gradient(from 0deg, rgba(62,160,255,.18) 0 100deg, transparent 100deg 260deg, rgba(62,160,255,.14) 260deg 360deg);
+    filter:saturate(1.2);
+  }
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  h1{font-size:clamp(40px,8vw,96px);letter-spacing:-.02em;margin:18px 0 0 0}
+  .eyebrow{display:inline-flex;gap:8px;border:1px solid rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;font-size:14px;color:rgba(255,255,255,.8)}
+  p{max-width:720px;font-size:22px;color:rgba(255,255,255,.75)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:rgba(62,160,255,.24);padding:10px 20px;border-radius:999px;color:#fff;text-decoration:none;margin-right:12px}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.secondary{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="fallback"></div>
+  <div class="container">
+    <div class="eyebrow">Visión nacional • <span style="color:#fff">Soberanía energética</span></div>
+    <h1>Plan Nuclear Argentino <span style="display:block;color:rgba(255,255,255,.8)">El futuro es <span style="color:#3ea0ff">nuclear</span>.</span></h1>
+    <p>Cero carbono de base, empleos de alta calificación y <em>liderazgo tecnológico</em>. No es un sueño: es un plan de construcción. Argentina, encendida en azul.</p>
+    <div style="margin-top:24px">
+      <a class="btn" href="#sumate">Quiero sumarme →</a>
+      <a class="btn secondary" href="#hoja-de-ruta">Ver la hoja de ruta</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
